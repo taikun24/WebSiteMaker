@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<canvas id="myChart"></canvas>
+　　<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+	<script>
+		let arrays = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+		for (var i = 0; i < 6; i++) {
+			for (var j = 0; j < 6; j++) {
+				for (var k = 0; k < 6; k++) {
+					arrays[(i+j+k+3)]+=1;
+				}
+			}
+		}
+		var ctx = document.getElementById("myChart");
+    var myLineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],
+      datasets: [
+        {
+          label: '回数',
+          data: arrays,
+          borderColor: "rgba(255,0,0,1)",
+          backgroundColor: "rgba(0,0,0,0)"
+        }
+      ],
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'サイコロ'
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            suggestedMax: 30,
+            suggestedMin: 0,
+            stepSize: 1
+          }
+        }]
+      },
+    }
+  });
+		console.log(arrays);
+	</script>
+</body>
+</html>
