@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WebSiteMaker - taikun</title>
+	<link
+  rel="stylesheet"
+  href="https://unpkg.com/modern-css-reset/dist/reset.min.css"
+/>
+	<link rel="icon" href="../icon.ico">
+	<link rel="stylesheet" href="../style.css" type="text/css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Kosugi+Maru&family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class='header'>
+		<div class='header-flex'>
+		<h1><a src="../index.html">WSM v1.0.0</a></h1>
+		<div class='header-menu'>
+			<a href="../index.html">Home</a>
+			<a href="#">New Project</a>
+			<a href="#">Get Started</a>
+			<a href="#">Credit</a>
+		</div>
+		</div>
+	</header>
+	<main>
+		<h1 class='center' style='font-size:500%;'>New Project</h1>
+		<div class='steps' id='step1' style='display: flex;'>
+			<div class='select_type' onclick='next(1,1);'>
+				<image src='../images/HTML.png'></image>
+				<p>Standard Site(HTML)</p>
+			</div>
+			<div class='select_type' onclick='next(2,1);'>
+				<image src='../images/wordpress.png'></image>
+				<p>Wordpress</p>
+			</div>
+		</div>
+		<div class='steps' id='step2' style=''>
+			<div>
+				<p>Project Name:</p>
+				<input id='projectName'>
+			</div>
+			<div style='margin-top: 3%;background-color: lightgray; padding:1% 1%' onclick='next(document.getElementById("projectName").value,2);cpr();'>
+				<p>Create Project</p>
+			</div>
+		</div>
+		<div class='steps' id='step3' style=''></div>
+	</main>
+	<script type="text/javascript">
+		let steps = [0,0];
+		function next(n,now){
+			document.getElementById('step'+now).style='display:none;'
+			document.getElementById('step'+(now+1)).style='display:flex;'
+			steps[now-1]=n;
+		}
+		function cpr(){
+			let old = JSON.parse(localStorage.getItem('wsm-projects'));
+			if(old.indexOf(steps[1])!=-1){
+				alert('the name is already used.');
+				location.href = './new_project.html'
+				return;
+			}
+			old[old.length] = steps[1];
+			localStorage.setItem('wsm-projects',JSON.stringify(old));
+			let item;
+			switch(steps[0]){
+				case 1:
+				item={
+					"type":"storage",
+					"name":steps[1],
+					"item":[
+						{"type":"file","name":"index.html","value":"<!DOCTYPE html>"+
+						"<html><head><meta charset='utf-8'>"+
+"<meta name='viewport' content='width=device-width, initial-scale=1'>"+
+	"<title></title></head><body></body></html>"},
+						{"type":"file","name":"script.js","value":""},
+						{"type":"file","name":"style.css","value":""}
+					],
+					"item-names":['index.html','script.js','style.css']
+				}
+			}
+			localStorage.setItem('wsm-project#'+steps[1],JSON.stringify(item));
+			location.href = './editor.html?project='+steps[1];
+		}
+	</script>
+	<script type="text/javascript" href='../virtualstorage.js'></script>
+</body>
+</html>

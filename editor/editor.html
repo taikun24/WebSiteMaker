@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WebSiteMaker - taikun</title>
+	<link
+  rel="stylesheet"
+  href="https://unpkg.com/modern-css-reset/dist/reset.min.css"
+/>
+	<link rel="icon" href="../icon.ico">
+	<link rel="stylesheet" href="../style.css" type="text/css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Kosugi+Maru&family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class='header'>
+		<div class='header-flex'>
+		<h1><a src="../index.html">WSM v1.0.0</a></h1>
+		<div class='header-menu'>
+			<p onclick="jumpsite('../index.html')">Home</p>
+			<p onclick="jumpsite('./new_project.html')">New Project</p>
+			<p onclick="jumpsite('../start.html')">Get Started</p>
+			<p onclick="jumpsite('../credit.html')">Credit</p>
+		</div>
+		</div>
+	</header>
+	<header class='editor-toolbar'>
+		<p style="color:white"><b>WSMEditor</b></p>
+		<p onclick="popups(1);" id='popup-button1'>File</p>
+		<p onclick="popups(2);" id='popup-button2'>Window</p>
+		<p id='saved-checker'>Project Saved.</p>
+	</header>
+	<main id='editor'>
+		<div class='page page-first' id='pageid-0' style="width: 100%;">
+			<header class='page-header'>
+				<p>HelloWorld</p>
+				<button onclick="closepage(0);">×</button>
+			</header>
+			<h1 style="text-align: center;font-size: 500%;">Hello!</h1>
+			<p style="text-align: center;font-size: 200%;">
+				How to use WSM(WebSiteMaker):<br>
+				1.Open File by WSMEditor menu "File" button and Click "Open File"<br>
+				(If use first this,Click "New File")<br>
+				2.Have Fun!
+			</p>
+		</div>
+		
+	</main>
+	<div>
+		<div id='popup-window-select1' class='hide popup-select'>
+			<p onclick="jumpsite('new_project.html');">New File</p>
+			<p onclick='popups(3);'>Open File</p>
+		</div>
+		<div id='popup-window-selectfile' class='hide popup-alert'>
+				<h2>Select File</h2>
+				<ul class='scroll'>
+				</ul>
+				<div class="flex">
+				<button style="border:none;background-color: skyblue;color: white;" onclick="popups(3);openfile();">OK</button>
+				<button style="border:none;background-color: snow;color: black;" onclick='popups(3);'>Cancel</button>
+				</div>
+		</div>
+			<div id='popup-window-select2' class='hide popup-select'>
+				<p onclick="openpage(1);">Open Hello Window</p>
+				<p onclick="openpage(2,open_storage);">Open File Browser</p>
+				<p onclick="openpage(3,{value:'<html><body>please set value</body></html>'});">Open PreView</p>
+				<p onclick="openpage(4);">Open Editor(ace)</p>
+			</div>
+			<div id='popup-window-contextwindow' class='hide popup-select'>
+			</div>
+
+	</div>
+	<script type="text/javascript" src='./virtualstorage.js'></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ext-language_tools.js"></script>
+	<script type="text/javascript" src='./main.js'></script>
+</body>
+</html>

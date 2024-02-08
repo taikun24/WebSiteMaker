@@ -1,0 +1,286 @@
+.hide{
+	display: none;
+}
+/* kv */
+.kv{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kv .main-copy{
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: .2em;
+}
+
+.kv .sub-copy{
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* video */
+.video{
+  width: 100%;
+  height: 100vh;
+  background: url(./images/movie.png) no-repeat center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video::after{
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: #10394b;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: .3;
+}
+
+.video video{
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+@media screen and (min-width: 768px) {
+  /* kv */
+  .kv{
+    min-width: 960px;
+  }
+
+  .kv .main-copy{
+    font-size: 60px;
+  }
+
+  .kv .sub-copy{
+    font-size: 30px;
+  }
+
+  /* video */
+  .video{
+    min-width: 960px;
+  }
+}
+.ebut{
+	background-color: rgba(0, 0, 0, 0.0);
+	margin: 0 40%;
+	border:1px solid white;
+	color:white;
+	width: 20%;
+	z-index: 10;
+	font-size: 200%;
+}
+.wrapper_t{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    color:#fff;
+    text-shadow: 0 0 15px #666;
+}
+.icon_image{
+	margin: 0 auto;
+	width: 30%;
+}
+.main{
+	width: 100%;
+	padding-top: 2%;
+	padding-left: 3%;
+	padding-right: 3%;
+	background-color: white;
+	padding-bottom: 3%;
+}
+.main p{
+	font-size: 3vh;
+}
+.foot{
+	width: 100%;
+	padding: 3% 3%;
+	text-align: center;
+	background-color: gray;
+}
+body{font-family: 'Inconsolata', monospace;
+/*font-family: 'Kosugi', sans-serif;*/
+font-family: 'Noto Sans JP', sans-serif;
+}
+.abouts{
+	display: flex;
+	margin: 3% 3%;
+}
+.abouts div{
+	margin-left:1%;
+	margin-right: 1%;
+	border:3px solid black;
+}
+.abouts div h2{
+	text-align: center;
+}
+.header{
+	background-color: #fcf1b6;
+}
+.header-flex{
+	padding: 1% 5%;
+	display: flex;
+}
+.header-menu{
+	display: flex;
+	margin-left: auto;
+	margin-right: 5%;
+}
+.header-menu a{
+	color:black;
+	text-decoration:none;
+	margin-left: 5%;
+}
+.center{
+	text-align: center;
+}
+.steps{
+	display: none;
+	justify-content: center;
+}
+#step2{
+	flex-direction: column;
+	align-items: center;
+}
+.select_type{
+	margin:1% 1%;
+	padding:1% 1%;
+	background-color: snow;
+	width:20%;
+}
+/*editor*/
+li {
+  list-style-type: none;
+}
+.header-menu p{
+	padding-left: 3%;
+}
+.hide{
+	display: none !important;
+}
+.editor-toolbar{
+	display: flex;
+	margin:0px 0px;
+	background-color: sandybrown;
+}
+.editor-toolbar p{
+	margin-left: 3%;
+}
+.popup-select{
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
+	background-color: white;
+	padding:0.5% 0.5%;
+}
+.popup-alert{
+	background-color: white;
+	display: flex;
+	position: fixed;
+	inset: 0;
+	margin: auto;
+	border: 3px solid black;
+	border-radius: 2px;
+	width:30%;
+	height: 50%;
+	padding:1% 1%;
+	flex-direction: column;
+}
+.scroll {
+ margin: 0 auto;
+  width: 90%;                
+  height: 70%;               
+  border: 1px solid #000;      
+  overflow-y: scroll;
+  margin:1% 0%;       
+}
+.flex{
+	display: flex;
+}
+.page{
+	border:1px solid gray;
+	width:auto;
+	height: 100%;
+	overflow: auto;
+}
+.page-header{
+	background-color: lightgray;
+	display: flex;
+	justify-content: space-between;
+}
+.page-header{
+	font-size: 1.5em;
+	color:black;
+}
+.page-header button{
+	border: none;
+	outline: none;
+	background: transparent;
+}
+#editor{
+	display: flex;
+	overflow: auto;
+	width: 100%;
+	height: 80vh;
+}
+.p-name{
+	margin:0px 0px;
+	padding: 0px 0px;
+}
+.p-name p{
+	text-align: left;
+	border:none;
+}
+.fbzone{
+	height: 100%;
+	padding:0% 3%;
+}
+.fbfile{
+	display: flex;
+	flex-direction: column;
+	/*height: 5%;*/
+}
+.fbimg{
+	width: 5%;
+	margin-right: 3%;
+}
+.fbtitle{
+	display: flex;
+	width: 100%;
+}
+.fbinner{
+	padding-left: 3%;
+	border-left: 1px solid black;
+	display: none;
+}
+.preview{
+	width: 100%;
+	height: 80%;
+}
+.ace-tool{
+	width: 100%;
+	height: 5%;
+}
+.ace-editor{
+	width: 100%;
+	height: 80%;
+}
